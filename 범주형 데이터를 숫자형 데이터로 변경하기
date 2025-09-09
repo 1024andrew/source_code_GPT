@@ -1,0 +1,14 @@
+
+from sklearn.preprocessing import LabelEncoder
+
+# CSV 파일 불러오기
+ce = pd.read_csv("/content/080289/chap02/data/car_evaluation.csv")
+
+# 모든 컬럼에 대해 Label Encoding 적용
+le_dict = {}
+for col in df.columns:
+    le = LabelEncoder()
+    ce[col] = le.fit_transform(df[col])
+    le_dict[col] = le  # 나중에 해석할 수 있도록 저장
+
+print(ce.head())
